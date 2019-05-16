@@ -43,4 +43,4 @@ knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-strip
 knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered"')
 ```
 
-
+> citation

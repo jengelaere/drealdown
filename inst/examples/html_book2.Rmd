@@ -46,3 +46,5 @@ knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-strip
 ```{r, echo=TRUE, results='asis'}
 knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered"')
 ```
+
+> citation

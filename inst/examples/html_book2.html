@@ -2150,6 +2150,33 @@ border-bottom: solid 2px #008ca0;
 .table-bordered > thead > tr > td,
 .table-bordered > thead > tr > th {
 border: 2px solid transparent;
+}
+
+blockquote {
+font-size: 1.133rem;
+display: block;
+margin: 1.5rem auto;
+width: 50%;
+padding: 0 1rem;
+position: relative;
+color: #00bebe;
+border: none;
+font-family: "Roboto Slab", "Times New Roman", serif;
+}
+blockquote::before,
+blockquote::after {
+content: '';
+background: #00bebe;
+width: 10px;
+height: 100%;
+display: block;
+position: absolute;
+bottom: 0;
+left: -12px;
+}
+blockquote::after {
+height: 50%;
+left: -28px;
 }</style>
 
 
@@ -3161,6 +3188,9 @@ Merc 280
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>blockquote</p>
+</blockquote>
 </div>
 </div>
 
