@@ -37,6 +37,6 @@ browseURL(examples)
   - Markdown classique de type `rmarkown::html_document()` :
     `drealdown::html_mark()`
   - Markdown avancé avec bookdown de type `bookdown::html_document2()` :
-    `drealdown::html2_book()`
+    `drealdown::html_book2()`
   - Markdown pour vignette de type `rmarkdown::html_vignette()` :
-    `drealdown::html__vignette()`
+    `drealdown::html_vignette()`
