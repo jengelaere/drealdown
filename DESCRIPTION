@@ -1,0 +1,23 @@
+Package: drealdown
+Title: Templates for html outputs
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Sebastien",
+             family = "Rochette",
+             role = c("aut", "cre"),
+             email = "sebastien@thinkr.fr",
+             comment = c(ORCID = "0000-0002-1565-9313")),
+      person(given = "ThinkR",
+             role = "cph"))
+Description: Templates for rmarkdown, bookdown and
+    flexdashboard.
+License: MIT + file LICENSE
+Imports: 
+    bookdown,
+    rmarkdown
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
