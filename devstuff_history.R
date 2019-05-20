@@ -4,6 +4,16 @@ usethis::use_build_ignore("inst/dev")
 usethis::use_build_ignore("rsconnect")
 usethis::use_git_ignore("docs/")
 usethis::use_git_ignore("rsconnect/")
+
+usethis::use_build_ignore("inst/examples/*.html")
+usethis::use_build_ignore("inst/examples/*_files")
+usethis::use_build_ignore("inst/examples/libs")
+
+
+usethis::use_git_ignore("inst/examples/*.html")
+usethis::use_git_ignore("inst/examples/*_files")
+usethis::use_git_ignore("inst/examples/libs")
+
 # usethis::create_package(".")
 
 # description ----

@@ -4,3 +4,6 @@
 .Ruserdata
 docs/
 rsconnect/
+inst/examples/*.html
+inst/examples/*_files
+inst/examples/libs

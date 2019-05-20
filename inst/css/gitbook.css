@@ -1,0 +1,124 @@
+:root {
+    --blue: #008ca0; /* primary */
+    /*--indigo: #6610f2; */
+    --purple: #5a1e82; /* secondary*/
+    /*--pink: #e83e8c;*/
+    --red: #eb3273; /* danger */
+    /*--orange: #fd7e14;*/
+    --yellow: #ffd200; /*warning*/
+    --green: #b4dc50; /* success */
+    /*--teal: #20c997; */
+    /*--cyan: #17a2b8; */
+    --white: #ffffff; 
+    --gray: #b4b4b4; /* info*/
+    --gray-light: #d2d2d2; /* info-light*/
+    --gray-dark: #343a40;
+    --primary: #008ca0; /*dreal*/
+    --primary-active: #00465a; /*dreal*/
+    --secondary: #5a1e82; /*dreal*/
+    --success: #b4dc50; /*dreal*/
+    --info: #b4b4b4; /*dreal*/
+    --info-light: #d2d2d2; /*dreal*/
+    --warning: #ffd200;/*dreal*/
+    --danger: #eb3273; /*dreal*/
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+
+
+html, body {
+    font-size: 11px;
+}
+
+/* header */
+.book .book-header h1 {
+    padding: 0;
+    color: var(--white) !important;
+}
+.book-header.fixed {
+    background-color: var(--primary) !important;
+}
+
+/* left panel */
+.book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
+    font-size: 14px;
+}
+.book .book-summary ul.summary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+    color: var(--white);
+}
+.book .book-summary ul.summary li a:hover,
+.book .book-summary ul.summary li.active > a {
+    color: var(--primary-active);
+}
+
+/* BEGIN TABLE STYLES */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table > thead > tr > th,
+table > thead > tr > th {
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.table th, .table td,
+table th, table td {
+  font-size: 0.9333rem;
+  /*padding: 0.9333rem 1rem 0.6rem 1rem;*/
+  padding: 0.45rem 0.5rem 0.3rem 0.5rem; /* Modified by SEB */
+  border-top-color: #00465a; }
+
+.table thead th,
+table thead th {
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-weight: 400;
+  border-bottom-color: #00465a; }
+
+.table tbody + tbody,
+table tbody + tbody {
+  border-top-color: #00465a; }
+  
+.table-bordered tbody tr th,
+.table-bordered tbody tr td {
+    border-bottom: solid 2px #008ca0;
+}
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+    border: 2px solid transparent;
+}
+
+/* Blockquote */
+blockquote {
+    font-size: 1.133rem;
+    display: block;
+    margin: 1.5rem auto;
+    width: 50%;
+    padding: 0 1rem;
+    position: relative;
+    color: #00bebe;
+    border: none;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+}
+
+blockquote::before,
+blockquote::after {
+    content: '';
+    background: #00bebe;
+    width: 10px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+}
+
+blockquote::after {
+    height: 50%;
+    left: -28px;
+}

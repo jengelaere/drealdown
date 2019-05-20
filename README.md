@@ -35,8 +35,22 @@ browseURL(examples)
 ### Fonctions incluses
 
   - Markdown classique de type `rmarkown::html_document()` :
-    `drealdown::html_mark()`
+    `drealdown::html_document()`
   - Markdown avancé avec bookdown de type `bookdown::html_document2()` :
-    `drealdown::html_book2()`
+    `drealdown::html_document2()`
   - Markdown pour vignette de type `rmarkdown::html_vignette()` :
     `drealdown::html_vignette()`
+  - Bookdown de type `bookdown::gitbook` : `drealdown::gitbook()`
+
+*Pour toutes ces fonctions, il est possible de choisir le mode `offline
+= TRUE` pour ne pas aller chercher les polices google si vous n’avez pas
+accès à Internet*
+
+### Exemples inclus
+
+Vous pouvez éxécuter les fichiers d’exemples inclus dans le package
+
+``` r
+examples <- system.file("examples", package = "drealdown")
+browseURL(examples)
+```

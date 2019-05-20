@@ -3,7 +3,8 @@ title: "Vignette Title"
 author: "Vignette Author"
 date: "`r Sys.Date()`"
 output: 
-  drealdown::html_vignette: default
+  drealdown::html_vignette:
+    offline: true
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}

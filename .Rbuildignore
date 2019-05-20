@@ -6,3 +6,6 @@
 ^\.gitlab-ci\.yml$
 ^ci$
 ^README\.Rmd$
+^inst/examples/*\.html$
+^inst/examples/*_files$
+^inst/examples/libs$

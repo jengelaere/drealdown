@@ -1,17 +1,18 @@
 ---
-title: "Rmarkdown with html_mark"
+title: "Example with drealdown::gitbook"
 output: 
-  drealdown::html_mark: 
+  drealdown::gitbook:
     offline: false
+    split_by: section
+  drealdown::html_chapters:
+    offline: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Titre de niveau 2
-### Titre de niveau 3
-#### Titre de niveau 4
+## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -30,17 +31,3 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-## Table
-
-### Striped
-```{r, echo=TRUE, results='asis'}
-knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-striped"')
-```
-
-### Bordered
-```{r, echo=TRUE, results='asis'}
-knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered"')
-```
-
-> citation
