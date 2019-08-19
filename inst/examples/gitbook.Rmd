@@ -4,8 +4,7 @@ output:
   drealdown::gitbook:
     offline: false
     split_by: section
-  drealdown::html_chapters:
-    offline: true
+  bookdown::gitbook: default
 ---
 
 ```{r setup, include=FALSE}

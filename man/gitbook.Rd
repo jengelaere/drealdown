@@ -4,12 +4,18 @@
 \alias{gitbook}
 \title{The GitBook output format with dreal template}
 \usage{
-gitbook(..., offline = FALSE)
+gitbook(..., css = NULL, lib_dir = "libs", offline = FALSE)
 }
 \arguments{
 \item{...}{parameters of \code{\link[bookdown]{gitbook}}}
 
-\item{offline}{Logical. TRUE if no access to internet}
+\item{css}{One or more css files to include}
+
+\item{lib_dir}{...
+Arguments to be passed to \code{rmarkdown::\link{html_document}()}
+(\code{...} not including \code{toc}, and \code{theme}).}
+
+\item{offline}{Set to TRUE to create a bookdown without internet connection}
 }
 \description{
 The GitBook output format with dreal template

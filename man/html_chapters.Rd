@@ -4,12 +4,18 @@
 \alias{html_chapters}
 \title{Build book chapters into separate HTML files with dreal template}
 \usage{
-html_chapters(..., offline = FALSE)
+html_chapters(..., css = NULL, lib_dir = "libs", offline = FALSE)
 }
 \arguments{
 \item{...}{parameters of \code{\link[bookdown]{html_chapters}}}
 
-\item{offline}{Logical. TRUE if no access to internet}
+\item{css}{One or more css files to include}
+
+\item{lib_dir}{...
+Arguments to be passed to \code{rmarkdown::\link{html_document}()}
+(\code{...} not including \code{toc}, and \code{theme}).}
+
+\item{offline}{Set to TRUE to create a bookdown without internet connection}
 }
 \description{
 Build book chapters into separate HTML files with dreal template

@@ -4,10 +4,12 @@
 \alias{html_vignette}
 \title{Convert to an HTML vignette with dreal template}
 \usage{
-html_vignette(..., offline = FALSE)
+html_vignette(..., css = NULL, offline = FALSE)
 }
 \arguments{
 \item{...}{parameters of \code{\link[rmarkdown]{html_vignette}}}
+
+\item{css}{One or more css files to include}
 
 \item{offline}{Logical. TRUE if no access to internet}
 }
