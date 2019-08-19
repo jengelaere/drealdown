@@ -4,10 +4,15 @@
 \alias{html_document}
 \title{Convert to HTML document with dreal template}
 \usage{
-html_document(..., offline = FALSE)
+html_document(..., includes = NULL, css = NULL, offline = FALSE)
 }
 \arguments{
 \item{...}{parameters of \code{\link[rmarkdown]{html_document}}}
+
+\item{includes}{Named list of additional content to include within the
+document (typically created using the \code{\link{includes}} function).}
+
+\item{css}{One or more css files to include}
 
 \item{offline}{Logical. TRUE if no access to internet}
 }

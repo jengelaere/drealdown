@@ -3,12 +3,14 @@
 #' @param ... parameters of \code{\link[rmarkdown]{html_document}}
 #' @param offline Logical. TRUE if no access to internet
 #' @importFrom rmarkdown includes
+#' @inheritParams rmarkdown::html_document
 #' 
 #' @export
-html_document <- function(..., offline = FALSE) {
+html_document <- function(..., includes = NULL, css = NULL, offline = FALSE) {
   
   # get the locations of resource files located within the package
-  css <- c(system.file("css/uikit.css", package = "drealdown"),
+  css <- c(css, 
+           system.file("css/uikit.css", package = "drealdown"),
            system.file("css/drealdown.css", package = "drealdown"))
   
   if (isTRUE(offline)) {
@@ -49,10 +51,11 @@ html_document2 <- function(..., offline = FALSE) {
 #' @inheritParams html_document
 #' 
 #' @export
-html_vignette <- function(..., offline = FALSE) {
+html_vignette <- function(..., css = NULL, offline = FALSE) {
   
   # get the locations of resource files located within the package
-  css <- c(system.file("css/uikit.css", package = "drealdown"),
+  css <- c(css,
+           system.file("css/uikit.css", package = "drealdown"),
            system.file("css/drealdown.css", package = "drealdown"))
   
   if (isTRUE(offline)) {
@@ -75,27 +78,39 @@ html_vignette <- function(..., offline = FALSE) {
 #' The GitBook output format with dreal template
 #' 
 #' @param ... parameters of \code{\link[bookdown]{gitbook}}
+#' @param offline Set to TRUE to create a bookdown without internet connection
 #' @inheritParams html_document
+#' @inheritParams bookdown::gitbook
 #' 
 #' @export
-gitbook <- function(..., offline = FALSE) {
+gitbook <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
   
   # get the locations of resource files located within the package
-  css <- c(system.file("css/uikit.css", package = "drealdown"),
-           system.file("css/gitbook.css", package = "drealdown"))
+  css <- normalizePath(c(
+    css,
+    system.file("css/uikit.css", package = "drealdown"),
+    system.file("css/gitbook.css", package = "drealdown")))
+  css_names <- file.path(lib_dir, basename(css))
+  if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
+  for (i in seq_along(css)) {
+    file.copy(css[i], css_names[i], overwrite = TRUE)
+  }
   
   if (isTRUE(offline)) {
     # call the base html_document function
     bookdown::gitbook(
-      css = css,
+      css = css_names,
+      lib_dir = lib_dir,
       ...
     )
   } else {
-    header <- system.file("templates/rmarkdown.html", package = "drealdown")
+    # header <- normalizePath(system.file("templates/rmarkdown.html", package = "drealdown"))
     # call the base html_document function
     bookdown::gitbook(
-      css = css,
-      includes = includes(before_body = header), 
+      lib_dir = lib_dir,
+      css = css_names,
+      # includes = includes(before_body = header), 
+      template = system.file("templates/gitbook.html", package = "drealdown"),
       ...
     )
   }
@@ -104,27 +119,40 @@ gitbook <- function(..., offline = FALSE) {
 #' Build book chapters into separate HTML files with dreal template
 #' 
 #' @param ... parameters of \code{\link[bookdown]{html_chapters}}
+#' @param offline Set to TRUE to create a bookdown without internet connection
 #' @inheritParams html_document
+#' @inheritParams bookdown::gitbook
 #' 
 #' @export
-html_chapters <- function(..., offline = FALSE) {
+html_chapters <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
   
   # get the locations of resource files located within the package
-  css <- c(system.file("css/uikit.css", package = "drealdown"),
-           system.file("css/gitbook.css", package = "drealdown"))
+  css <- normalizePath(c(
+    css,
+    # system.file("resources/gitbook/css/style.css", package = "bookdown"),
+    system.file("css/uikit.css", package = "drealdown"),
+    system.file("css/gitbook.css", package = "drealdown")))
+  css_names <- file.path(lib_dir, basename(css))
+  if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
+  for (i in seq_along(css)) {
+    file.copy(css[i], css_names[i], overwrite = TRUE)
+  }
   
   if (isTRUE(offline)) {
     # call the base html_document function
     bookdown::html_chapters(
-      css = css,
+      css = css_names,
+      lib_dir = lib_dir,
       ...
     )
   } else {
     header <- system.file("templates/rmarkdown.html", package = "drealdown")
     # call the base html_document function
     bookdown::html_chapters(
-      css = css,
-      includes = includes(before_body = header), 
+      css = css_names,
+      lib_dir = lib_dir,
+      # includes = includes(before_body = header),
+      template = system.file("templates/gitbook.html", package = "drealdown"),
       ...
     )
   }
