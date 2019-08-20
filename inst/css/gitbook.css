@@ -56,6 +56,11 @@ html, body {
     color: var(--primary-active);
 }
 
+/* body */
+a.navigation {
+    text-decoration: none;
+}
+
 /* BEGIN TABLE STYLES */
 table {
     border-spacing: 0;

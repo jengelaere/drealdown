@@ -10,8 +10,8 @@ html_document <- function(..., includes = NULL, css = NULL, offline = FALSE) {
   
   # get the locations of resource files located within the package
   css <- c(css, 
-           system.file("css/uikit.css", package = "drealdown"),
-           system.file("css/drealdown.css", package = "drealdown"))
+           system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
+           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"))
   
   if (isTRUE(offline)) {
     # call the base html_document function
@@ -55,8 +55,8 @@ html_vignette <- function(..., css = NULL, offline = FALSE) {
   
   # get the locations of resource files located within the package
   css <- c(css,
-           system.file("css/uikit.css", package = "drealdown"),
-           system.file("css/drealdown.css", package = "drealdown"))
+           system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
+           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"))
   
   if (isTRUE(offline)) {
     # call the base html_document function
@@ -88,7 +88,7 @@ gitbook <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
   # get the locations of resource files located within the package
   css <- normalizePath(c(
     css,
-    system.file("css/uikit.css", package = "drealdown"),
+    system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
     system.file("css/gitbook.css", package = "drealdown")))
   css_names <- file.path(lib_dir, basename(css))
   if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
@@ -130,7 +130,7 @@ html_chapters <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
   css <- normalizePath(c(
     css,
     # system.file("resources/gitbook/css/style.css", package = "bookdown"),
-    system.file("css/uikit.css", package = "drealdown"),
+    system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
     system.file("css/gitbook.css", package = "drealdown")))
   css_names <- file.path(lib_dir, basename(css))
   if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
@@ -146,7 +146,7 @@ html_chapters <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
       ...
     )
   } else {
-    header <- system.file("templates/rmarkdown.html", package = "drealdown")
+    # header <- system.file("templates/rmarkdown.html", package = "drealdown")
     # call the base html_document function
     bookdown::html_chapters(
       css = css_names,
