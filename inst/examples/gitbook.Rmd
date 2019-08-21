@@ -9,6 +9,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(drealdown)
 ```
 
 ## R Markdown
@@ -30,3 +31,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Icons
+
+`r my_icon("la-tree", size = 2)` Icons in the text `r my_icon("drl-campagne", size = 3, color = drealthemes::dreal_cols("primary_active"))`
+

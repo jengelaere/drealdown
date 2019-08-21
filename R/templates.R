@@ -11,7 +11,12 @@ html_document <- function(..., includes = NULL, css = NULL, offline = FALSE) {
   # get the locations of resource files located within the package
   css <- c(css, 
            system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
-           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"))
+           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"),
+           list.files(system.file("fonts/dreal", package = "drealdown"),
+                      recursive = TRUE, pattern = ".css", full.names = TRUE),
+           list.files(system.file("fonts/line-awesome", package = "drealdown"),
+                      recursive = TRUE, pattern = ".min.css", full.names = TRUE)
+           )
   
   if (isTRUE(offline)) {
     # call the base html_document function
@@ -89,12 +94,28 @@ gitbook <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
   css <- normalizePath(c(
     css,
     system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
-    system.file("css/gitbook.css", package = "drealdown")))
+    system.file("css/gitbook.css", package = "drealdown")
+    ))
   css_names <- file.path(lib_dir, basename(css))
   if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
   for (i in seq_along(css)) {
     file.copy(css[i], css_names[i], overwrite = TRUE)
   }
+  
+  
+  # icons, copy all directory
+  icons_css <- c(list.files(system.file("fonts/dreal", package = "drealdown"),
+                            recursive = TRUE, pattern = ".css", full.names = TRUE),
+                 list.files(system.file("fonts/line-awesome", package = "drealdown"),
+                            recursive = TRUE, pattern = ".min.css", full.names = TRUE)
+  )
+  icons_css_names <- gsub(system.file("", package = "drealdown"), "", icons_css, fixed = TRUE)
+  # Add css to the list
+  css_names <- c(file.path(lib_dir, icons_css_names), css_names)
+  
+  # Copy complete directories
+  file.copy(system.file("fonts", package = "drealdown"), 
+            lib_dir, recursive = TRUE)
   
   if (isTRUE(offline)) {
     # call the base html_document function
@@ -131,12 +152,28 @@ html_chapters <- function(..., css = NULL, lib_dir = "libs", offline = FALSE) {
     css,
     # system.file("resources/gitbook/css/style.css", package = "bookdown"),
     system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
-    system.file("css/gitbook.css", package = "drealdown")))
-  css_names <- file.path(lib_dir, basename(css))
+    system.file("css/gitbook.css", package = "drealdown")
+    ))
+  
+  css_names <- file.path(lib_dir, c(basename(css), icons_css_names))
   if (!dir.exists(lib_dir)) {dir.create(lib_dir)}
   for (i in seq_along(css)) {
     file.copy(css[i], css_names[i], overwrite = TRUE)
   }
+  
+  # icons, copy all directory
+  icons_css <- c(list.files(system.file("fonts/dreal", package = "drealdown"),
+                            recursive = TRUE, pattern = ".css", full.names = TRUE),
+                 list.files(system.file("fonts/line-awesome", package = "drealdown"),
+                            recursive = TRUE, pattern = ".min.css", full.names = TRUE)
+  )
+  icons_css_names <- gsub(system.file("", package = "drealdown"), "", icons_css, fixed = TRUE)
+  all_fonts <- list.files(system.file("fonts", package = "drealdown"),
+                          recursive = TRUE, full.names = TRUE)
+  all_fonts_names <- gsub(system.file("", package = "drealdown"), "", all_fonts, fixed = TRUE)
+  file.copy(all_fonts, file.path(lib_dir, all_fonts_names), recursive = TRUE)
+  
+  css_names <- c(css_names, file.path(lib_dir, icons_css_names))
   
   if (isTRUE(offline)) {
     # call the base html_document function
