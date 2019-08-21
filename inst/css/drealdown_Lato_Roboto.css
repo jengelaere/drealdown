@@ -1,3 +1,38 @@
+:root {
+    --blue: #008ca0; /* primary */
+    /*--indigo: #6610f2; */
+    --purple: #5a1e82; /* secondary*/
+    /*--pink: #e83e8c;*/
+    --red: #eb3273; /* danger */
+    /*--orange: #fd7e14;*/
+    --yellow: #ffd200; /*warning*/
+    --green: #b4dc50; /* success */
+    /*--teal: #20c997; */
+    /*--cyan: #17a2b8; */
+    --white: #ffffff; 
+    --gray: #b4b4b4; /* info*/
+    --gray-light: #d2d2d2; /* info-light*/
+    --gray-dark: #343a40;
+    --primary: #008ca0; /*dreal*/
+    --primary-active: #00465a; /*dreal*/
+    --primary-light: #00bebe; /*dreal*/
+    --secondary: #5a1e82; /*dreal*/
+    --success: #b4dc50; /*dreal*/
+    --info: #b4b4b4; /*dreal*/
+    --info-light: #d2d2d2; /*dreal*/
+    --warning: #ffd200;/*dreal*/
+    --danger: #eb3273; /*dreal*/
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
 body {
     max-width: 1024px;
     margin: 0 auto;
@@ -78,4 +113,38 @@ blockquote::after {
 blockquote::after {
     height: 50%;
     left: -28px;
+}
+
+
+/* nav-tabs*/
+.nav-tabs {
+    background-color: var(--primary-light);
+    color: var(--white);
+    font-weight: bold;
+}
+.nav-tabs > li.active {
+    border-top-color: var(--primary-active);
+    background-color: var(--primary-active);
+}
+.nav-tabs > li.active a {
+    background-color: var(--primary-active);
+}
+.nav-tabs > li.active {
+  color: var(--primary-active);
+}
+.nav-tabs > li > a,
+.nav-tabs > li.active a {
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-tabs > li > a:hover {
+    color: var(--primary-active);
+}
+.nav-tabs > li.active a:focus {
+    background-color: var(--primary-active);
+    color: var(--white);
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover,
+.nav-tabs > li > a, .nav-tabs > li > a:focus, .nav-tabs > li > a:hover {
+    border: none;
 }
