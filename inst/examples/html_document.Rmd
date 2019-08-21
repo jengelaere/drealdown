@@ -7,6 +7,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(drealdown)
 ```
 
 ## Titre de niveau 2
@@ -48,4 +49,25 @@ knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-borde
 knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered first-rowname"')
 ```
 
+### Citation
 > citation
+
+### Icones 
+#### liste
+
+```{r}
+my_icon_list[1:10]
+```
+
+#### inline
+
+   `r my_icon("la-tree", size = 2)` Icone in the text `r my_icon("drl-campagne")`
+
+#### in chunk
+```{r}
+my_icon("la-jsfiddle")
+my_icon("drl-explosion", size = 2)
+my_icon("drl-cadastre", size = 7, color = 'red')
+```
+
+

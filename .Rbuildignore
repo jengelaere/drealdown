@@ -11,3 +11,4 @@
 ^inst/examples/libs$
 ^_pkgdown\.yml$
 ^docs$
+^data-raw$

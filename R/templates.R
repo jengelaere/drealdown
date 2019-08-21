@@ -11,7 +11,12 @@ html_document <- function(..., includes = NULL, css = NULL, offline = FALSE) {
   # get the locations of resource files located within the package
   css <- c(css, 
            system.file("css/uikit_Lato_Roboto.css", package = "drealdown"),
-           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"))
+           system.file("css/drealdown_Lato_Roboto.css", package = "drealdown"),
+           list.files(system.file("fonts/dreal", package = "drealdown"),
+                      recursive = TRUE, pattern = ".css", full.names = TRUE),
+           list.files(system.file("fonts/line-awesome", package = "drealdown"),
+                      recursive = TRUE, pattern = ".min.css", full.names = TRUE)
+           )
   
   if (isTRUE(offline)) {
     # call the base html_document function

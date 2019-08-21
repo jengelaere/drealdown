@@ -68,7 +68,8 @@ usethis::use_news_md()
 thinkridentity::create_vignette_thinkr("aa-data-exploration")
 usethis::use_vignette("ab-model")
 devtools::build_vignettes()
-
+# Data
+usethis::use_data_raw()
 
 # _Book
 # thinkridentity::install_git_with_pwd(repo = "ThinkR/visualidentity", username, password, host = "git.thinkr.fr")
