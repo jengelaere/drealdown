@@ -1309,29 +1309,38 @@ ul.list {
   border-top-color: #00465a; }
 
 .table-bordered {
-  border: none; }
+  border: none !important; }
+  
   .table-bordered thead th {
-    border-color: #008ca0;
-    border-width: 2px;
-    border-top: none;
-    border-left: none;
+    border-color: #008ca0 !important;
+    border-width: 2px !important;
+    border-top: none !important;
+    border-left: none !important;
     color: #00465a;
     font-weight: 300;
+    font-size: 1.1333rem;
     /* text-transform: uppercase; */
 	}
     .table-bordered thead th:last-child {
-      border-right: none; }
+      border-right: none !important; }
   .table-bordered tbody tr th, .table-bordered tbody tr td {
-    border-color: #008ca0;
-    border-width: 2px; }
+    border-color: #008ca0 !important;
+    border-width: 2px !important; }
   .table-bordered tbody tr th {
-    border: none;
-    color: #00465a; }
+    border: none !important;
+    color: #00465a !important; }
   .table-bordered tbody tr td {
-    border-right: none;
-    border-bottom: none;
-    border-left: none; /* Added by Seb */
-    color: #8246aa; }
+    border-right: none !important;
+    border-bottom: none !important;
+    /* border-left: none; /* Added by Seb */
+    color: #8246aa; 
+  }
+
+.table-bordered.first-rowname td:first-child {
+    border: none;
+    color: #00465a;
+    font-weight: 600;
+}
 
 .table-striped thead {
   background: #00465a; }

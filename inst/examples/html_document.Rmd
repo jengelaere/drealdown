@@ -43,4 +43,9 @@ knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-strip
 knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered"')
 ```
 
+### Bordered with first column is rowname
+```{r, echo=TRUE, results='asis'}
+knitr::kable(head(mtcars, 10), format = "html", table.attr = 'class="table-bordered first-rowname"')
+```
+
 > citation
