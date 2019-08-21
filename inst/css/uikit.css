@@ -1328,7 +1328,7 @@ ul.list {
   .table-bordered tbody tr td {
     border-right: none;
     border-bottom: none;
-    border-left: none; /* Added by Seb */
+    /* border-left: none; Added by Seb */
     color: #8246aa; }
 
 .table-striped thead {
