@@ -48,6 +48,47 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
 }
 
+
+/* TOC */
+#TOC::before {
+    content: "TABLE DES MATIERES";
+    line-height: 2rem;
+    color: var(--primary-active);
+}
+#TOC {
+    border-top: solid 1px var(--gray-light);
+    border-bottom: solid 1px var(--gray-light);
+    padding: 0.33em 0;
+}
+#TOC ul li::marker {
+    display: none;
+}
+#TOC ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+#TOC ul li ul {
+    padding-left: 1.25rem;
+}
+
+#TOC.tocify {
+    border-radius: 0;
+}
+#TOC.tocify::before {
+    margin-left: 5px;
+}
+#TOC.tocify ul li {
+    background-color: var(--primary-light);
+    color: white;
+}
+#TOC.tocify .active {
+    background-color: var(--primary-active);
+    color: var(--primary-light);
+}
+#TOC.tocify ul li:hover {
+    background-color: var(--primary);
+}
+
 /* BEGIN TABLE STYLES */
 table {
     border-spacing: 0;

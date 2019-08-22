@@ -2,7 +2,10 @@
 title: "Rmarkdown with html_document"
 output: 
   drealdown::html_document: 
-    offline: true
+    offline: false
+    toc: true
+    toc_float: true
+    toc_depth: 4
 ---
 
 ```{r setup, include=FALSE}
