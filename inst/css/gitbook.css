@@ -15,6 +15,7 @@
     --gray-dark: #343a40;
     --primary: #008ca0; /*dreal*/
     --primary-active: #00465a; /*dreal*/
+    --primary-light: #00bebe; /*dreal*/
     --secondary: #5a1e82; /*dreal*/
     --success: #b4dc50; /*dreal*/
     --info: #b4b4b4; /*dreal*/
@@ -40,7 +41,8 @@ html, body {
 }
 
 /* left panel */
-.book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
     font-size: 14px;
 }
 .book .book-summary ul.summary {
@@ -50,10 +52,15 @@ html, body {
 .book .book-summary ul.summary li a,
 .book .book-summary ul.summary li span {
     color: var(--white);
+    text-decoration: none;
 }
-.book .book-summary ul.summary li a:hover,
 .book .book-summary ul.summary li.active > a {
-    color: var(--primary-active);
+    color: var(--primary-light);
+    background-color: var(--primary-active);
+}
+.book .book-summary ul.summary li a:hover {
+    color: var(--white);
+    background-color: var(--primary-light);
 }
 
 /* body */
