@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # drealdown
@@ -20,7 +19,7 @@ To install the package, you can run the following script
 
 ``` r
 # install.packages("remotes")
-remotes::install_git(url = "https://git.thinkr.fr/ThinkR/Missions/drealdown")
+remotes::install_git(url = "https://gitlab.com/dreal-datalab/drealdown")
 ```
 
 ## Templates
