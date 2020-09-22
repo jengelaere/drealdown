@@ -19,7 +19,7 @@ To install the package, you can run the following script
 
 ``` r
 # install.packages("remotes")
-remotes::install_git(url = "https://gitlab.com/dreal-datalab/drealdown")
+remotes::install_gitlab(repo = "dreal-datalab/drealdown")
 ```
 
 ## Templates
